@@ -9,7 +9,7 @@ import java.time.LocalDateTime; // ใช้ LocalDateTime สำหรับว
 
 @Entity
 @Table(name = "products")
-@EntityListeners(AuditingEntityListener.class) // เพิ่มบรรทัดนี้
+@EntityListeners(AuditingEntityListener.class)
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,15 +19,14 @@ public class Product {
     private Double price;
     private String imageUrl;
 
-    @CreatedDate // เพิ่ม annotation นี้
+    @CreatedDate 
     @Column(nullable = false, updatable = false) // ตั้งค่าให้ไม่เป็น null และไม่อัปเดตเมื่อสร้างแล้ว
     private LocalDateTime createdAt;
 
-    @LastModifiedDate // เพิ่ม annotation นี้
-    @Column(nullable = false) // ตั้งค่าให้ไม่เป็น null
+    @LastModifiedDate 
+    @Column(nullable = false) 
     private LocalDateTime updatedAt;
 
-    // Constructors (ถ้าคุณมี)
     public Product() {
     }
 
