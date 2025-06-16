@@ -32,7 +32,6 @@ public class ProductController {
     @GetMapping("/paged")
     public ResponseEntity<Page<Product>> getAllProductsPaged(
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
-            // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
             // เปลี่ยนค่า default sort เป็น "createdAt" และ direction เป็น DESC
         Page<Product> products = productService.getAllProductsPaged(pageable);
         if (products.isEmpty()) {
@@ -45,7 +44,6 @@ public class ProductController {
     public ResponseEntity<Page<Product>> searchProductsByNamePaged(
             @RequestParam String name,
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
-            // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
             // เปลี่ยนค่า default sort เป็น "createdAt" และ direction เป็น DESC
         Page<Product> products = productService.searchProductsByNamePaged(name, pageable);
         if (products.isEmpty()) {

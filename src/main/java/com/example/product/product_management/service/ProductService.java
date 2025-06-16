@@ -98,8 +98,7 @@ public class ProductService {
                         }
                         existingProduct.setImageUrl(null); // ตั้งค่าเป็น null ใน database
                     }
-                    // ถ้า !selectedFile และ productDetails.getImageUrl() ไม่ใช่ null และไม่ว่าง ให้ใช้ค่าเดิมใน DB (ไม่เปลี่ยนแปลง)
-                    // ถ้าไม่ตรงเงื่อนไขด้านบน (เช่น user ไม่ได้เปลี่ยนรูปแต่ก็ไม่ได้ลบรูป) ก็ให้ imageUrl ใน existingProduct เป็นค่าเดิมต่อไป
+                    
                     
                     return productRepository.save(existingProduct);
                 });
